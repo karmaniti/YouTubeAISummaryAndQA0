@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Copilot Support</title>
+    <style>
+        :root {
+            --primary-color: #2b7de9;
+            --secondary-color: #f5f5f7;
+            --accent-color: #5e9eff;
+            --text-color: #333;
+            --light-text: #666;
+            --border-color: #ddd;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text {
+            margin-left: 15px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-top: 40px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 1.3em;
+            color: var(--text-color);
+            margin-top: 30px;
+        }
+
+        .subtitle {
+            color: var(--light-text);
+            margin-top: 5px;
+        }
+
+        .contact-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .contact-button:hover {
+            background-color: var(--accent-color);
+        }
+
+        .question {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .question h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.2em;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .feature {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .feature h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .feature-icon {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .troubleshooting-steps {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .troubleshooting-steps ol {
+            margin-left: 20px;
+            padding-left: 20px;
+        }
+
+        footer {
+            background-color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .subscription-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .subscription-table th,
+        .subscription-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .subscription-table th {
+            background-color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .subscription-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo-container {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo-text">
+                    <h1>YouTube Copilot</h1>
+                    <p class="subtitle">Video Summarizer & AI Assistant</p>
+                </div>
+            </div>
+            <a href="#contact" class="contact-button">Contact Support</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="overview">
+            <h2>App Overview</h2>
+            <p>
+                YouTube Copilot is an AI-powered tool that helps you extract valuable information from YouTube videos 
+                without watching them entirely. Get summaries and answers to your specific questions about any YouTube 
+                content with just a few taps.
+            </p>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📝</div>
+                    <h3>Instant Summaries</h3>
+                    <p>Paste any YouTube URL and get an AI-generated summary of the video content in seconds.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">❓</div>
+                    <h3>Smart Q&A</h3>
+                    <p>Ask specific questions about the video content and get accurate answers without watching the entire video.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Full Transcript Access</h3>
+                    <p>View, search, and copy the complete video transcript for your reference.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔊</div>
+                    <h3>Text-to-Speech</h3>
+                    <p>Listen to summaries and answers with our built-in speech functionality.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="question">
+                <h3>How do I get started with YouTube Copilot?</h3>
+                <p>
+                    Getting started is simple:
+                </p>
+                <ol>
+                    <li>Install the app from the App Store</li>
+                    <li>Go to Settings and add your API key from your preferred AI provider</li>
+                    <li>Paste a YouTube URL into the app</li>
+                    <li>Get instant summaries and start asking questions about the content</li>
+                </ol>
+            </div>
+            
+            <div class="question">
+                <h3>What AI providers are supported?</h3>
+                <p>
+                    YouTube Copilot supports multiple AI providers:
+                </p>
+                <ul>
+                    <li>OpenAI (GPT-4o, GPT-4, GPT-3.5)</li>
+                    <li>Azure OpenAI</li>
+                    <li>Anthropic (Claude 3 models)</li>
+                    <li>Google (Gemini models)</li>
+                </ul>
+                <p>You'll need to provide your own API key from one of these providers in the app settings.</p>
+            </div>
+            
+            <div class="question">
+                <h3>Why do I need to provide my own API key?</h3>
+                <p>
+                    Using your own API key provides several benefits:
+                </p>
+                <ul>
+                    <li>Enhanced privacy - your data is sent directly from your device to the AI provider</li>
+                    <li>Full control over your AI usage and costs</li>
+                    <li>Ability to choose your preferred AI provider</li>
+                    <li>No intermediary servers storing your transcripts or conversations</li>
+                </ul>
+            </div>
+            
+            <div class="question">
+                <h3>Does YouTube Copilot work with all YouTube videos?</h3>
+                <p>
+                    YouTube Copilot works with any YouTube video that has available captions or transcripts. However, it may not work with:
+                </p>
+                <ul>
+                    <li>Some live streams</li>
+                    <li>Very recent uploads where captions haven't been processed yet</li>
+                    <li>Videos where the creator has disabled transcripts</li>
+                    <li>YouTube Shorts (due to their format)</li>
+                </ul>
+            </div>
+            
+            <div class="question">
+                <h3>How do I manage my subscription?</h3>
+                <p>
+                    You can manage your YouTube Copilot subscription directly through your Apple ID settings:
+                </p>
+                <ol>
+                    <li>Go to your iPhone/iPad Settings</li>
+                    <li>Tap your Apple ID at the top</li>
+                    <li>Tap Subscriptions</li>
+                    <li>Find YouTube Copilot in your list of subscriptions</li>
+                    <li>From here you can upgrade, downgrade, or cancel your subscription</li>
+                </ol>
+                <p>Alternatively, you can tap the "Manage Subscription" button in the app's Subscription screen.</p>
+            </div>
+            
+            <div class="question">
+                <h3>Is my data private and secure?</h3>
+                <p>
+                    Privacy is a core principle of YouTube Copilot:
+                </p>
+                <ul>
+                    <li>Your API keys are stored securely in your device's keychain and never sent to our servers</li>
+                    <li>Transcripts and questions are processed locally or sent directly to your chosen AI provider</li>
+                    <li>We don't store your conversations, transcripts, or summaries on our servers</li>
+                    <li>All history is saved locally on your device</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="subscription">
+            <h2>Subscription Plans</h2>
+            <p>
+                YouTube Copilot offers several subscription options to fit your needs:
+            </p>
+            
+            <table class="subscription-table">
+                <tr>
+                    <th>Plan</th>
+                    <th>Features</th>
+                    <th>Limitations</th>
+                </tr>
+                <tr>
+                    <td><strong>Free Trial</strong></td>
+                    <td>
+                        <ul>
+                            <li>Full app functionality</li>
+                            <li>AI-powered summaries and Q&A</li>
+                            <li>Transcript access</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Limited to 7 days</li>
+                            <li>Restricted number of queries</li>
+                            <li>One-time use per device</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Basic Plan</strong><br>(Monthly/Yearly)</td>
+                    <td>
+                        <ul>
+                            <li>All free trial features</li>
+                            <li>Increased monthly query limit (500)</li>
+                            <li>History tracking</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Monthly query limits apply</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Premium Plan</strong><br>(Monthly/Yearly)</td>
+                    <td>
+                        <ul>
+                            <li>All Basic features</li>
+                            <li>Unlimited queries</li>
+                            <li>Priority support</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>None</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            
+            <p>
+                All subscriptions are managed through Apple's in-app purchase system. Subscriptions automatically renew 
+                unless auto-renew is turned off at least 24 hours before the end of the current period.
+            </p>
+        </section>
+
+        <section id="troubleshooting">
+            <h2>Troubleshooting</h2>
+            
+            <h3>Common Issues</h3>
+            
+            <div class="question">
+                <h3>"API key not configured" message</h3>
+                <div class="troubleshooting-steps">
+                    <p>To fix this issue:</p>
+                    <ol>
+                        <li>Tap the "Settings" button in the app</li>
+                        <li>Select your preferred AI provider</li>
+                        <li>Enter your API key from that provider</li>
+                        <li>Tap "Save Settings"</li>
+                    </ol>
+                    <p>You can obtain API keys from:</p>
+                    <ul>
+                        <li>OpenAI: <a href="https://platform.openai.com/api-keys" target="_blank">https://platform.openai.com/api-keys</a></li>
+                        <li>Google Gemini: <a href="https://ai.google.dev/" target="_blank">https://ai.google.dev/</a></li>
+                        <li>Claude: <a href="https://console.anthropic.com/" target="_blank">https://console.anthropic.com/</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="question">
+                <h3>"Cannot access transcript" or transcript errors</h3>
+                <div class="troubleshooting-steps">
+                    <p>If you're having trouble getting a transcript:</p>
+                    <ol>
+                        <li>Check that the YouTube video has captions available</li>
+                        <li>Ensure you have a stable internet connection</li>
+                        <li>Try closing and reopening the app</li>
+                        <li>If the error persists, try another video to confirm if it's video-specific</li>
+                        <li>As a last resort, try using the "Reset" feature by tapping with four fingers on the screen</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="question">
+                <h3>Subscription issues or "Monthly limit reached" messages</h3>
+                <div class="troubleshooting-steps">
+                    <p>If you're having subscription-related issues:</p>
+                    <ol>
+                        <li>Check your current subscription status in the App Store</li>
+                        <li>If you've recently upgraded but still see limitations, restart the app</li>
+                        <li>Ensure your payment method is valid in your Apple ID settings</li>
+                        <li>If you believe there's an error with your subscription status, contact our support team</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="question">
+                <h3>App freezing or unresponsive</h3>
+                <div class="troubleshooting-steps">
+                    <p>If the app becomes unresponsive:</p>
+                    <ol>
+                        <li>Force close the app by swiping up from the bottom of your screen (or double-tapping home on older devices)</li>
+                        <li>Restart the app</li>
+                        <li>If problems persist, try restarting your device</li>
+                        <li>As a last resort, you can reinstall the app (your history should be preserved)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Support</h2>
+            <p>
+                If you need additional help or have questions not covered here, please contact our support team:
+            </p>
+            
+            <div class="question">
+                <h3>Email Support</h3>
+                <p>
+                    For general inquiries, feature requests, or technical support:
+                    <br>
+                    <a href="mailto:info@karmaniti.com">info@karmaniti.com</a>
+                </p>
+            </div>
+            
+            <div class="question">
+                <h3>Website</h3>
+                <p>
+                    Visit our website for additional resources and information:
+                    <br>
+                    <a href="https://ai.karmaniti.com" target="_blank">https://ai.karmaniti.com</a>
+                </p>
+            </div>
+            
+            <div class="question">
+                <h3>Business Hours</h3>
+                <p>
+                    Our support team is available Monday through Friday, 9:00 AM to 5:00 PM CST.
+                    <br>
+                    Please allow up to 24-48 hours for a response.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Karma Niti LLC. All rights reserved.</p>
+        <p>
+            <a href="privacy-policy.html">Privacy Policy</a> | 
+            <a href="terms-of-service.html">Terms of Service</a>
+        </p>
+    </footer>
+</body>
+</html>
